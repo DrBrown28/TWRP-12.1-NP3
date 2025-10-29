@@ -6,9 +6,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_Metroid.mk
+    $(LOCAL_DIR)/twrp_Metroid.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_Metroid-user \
-    omni_Metroid-userdebug \
-    omni_Metroid-eng
+    twrp_Metroid-eng

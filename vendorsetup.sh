@@ -5,6 +5,4 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-add_lunch_combo omni_Metroid-user
-add_lunch_combo omni_Metroid-userdebug
-add_lunch_combo omni_Metroid-eng
+add_lunch_combo twrp_Metroid-eng
