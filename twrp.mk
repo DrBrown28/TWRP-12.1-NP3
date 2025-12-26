@@ -25,7 +25,7 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 
 TW_MAX_BRIGHTNESS := 2048
 
-TW_DEFAULT_LANGUAGE     := en
+TW_DEFAULT_LANGUAGE     := es
 TW_USE_TOOLBOX          := true
 TW_INCLUDE_NTFS_3G      := true
 TW_INCLUDE_FUSE_EXFAT   := true

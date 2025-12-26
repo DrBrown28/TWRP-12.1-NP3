@@ -24,9 +24,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/fox_Asteroids.mk
+    $(LOCAL_DIR)/fox_Metroid.mk
 
 COMMON_LUNCH_CHOICES := \
-    fox_Asteroids-user \
-    fox_Asteroids-userdebug \
-    fox_Asteroids-eng
+    fox_Metroid-user \
+    fox_Metroid-userdebug \
+    fox_Metroid-eng

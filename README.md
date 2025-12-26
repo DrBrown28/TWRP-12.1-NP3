@@ -14,6 +14,6 @@
 
 ```
 source build/envsetup.sh
-lunch fox_Asteroids-userdebug
+lunch fox_Metroid-userdebug
 mka adbd recoveryimage
 ```
