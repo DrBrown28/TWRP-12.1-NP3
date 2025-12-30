@@ -26,7 +26,7 @@
 # 	Please maintain this if you use this script or any part of it
 
 
-DEVICE_PATH := device/nothing/Asteroids
+DEVICE_PATH := device/nothing/Metroid
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
