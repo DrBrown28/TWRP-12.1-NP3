@@ -233,3 +233,15 @@ PLATFORM_VERSION := 12.1
 TW_HAS_EDL_MODE := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS :=true
 TARGET_SUPPORTS_64_BIT_APPS :=true
+
+TW_LOAD_VENDOR_MODULES := \
+    adsp_loader_dlkm.ko \
+    adsp_sleepmon.ko \
+    goodix_ts.ko \
+    goodix_fp.ko \
+    focaltech_tp.ko \
+    rproc_qcom_common.ko \
+    q6_dlkm.ko \
+    qcom_q6v5.ko \
+    qcom_q6v5_pas.ko \
+    qcom_sysmon.ko

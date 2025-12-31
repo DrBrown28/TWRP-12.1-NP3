@@ -4,13 +4,12 @@
 ## Works
 * Screen
 * Buttons
-* Touchscreen
 
 ## Current Issues
 * Vibration
 * Data decryption
 * CPU temperature display
-
+* Touchscreen
 
 ```
 source build/envsetup.sh
