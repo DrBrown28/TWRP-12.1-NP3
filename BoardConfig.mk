@@ -111,14 +111,10 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-# Despite being VA/B device, there is a dedicated recovery partition
-BOARD_USES_RECOVERY_AS_BOOT := 
-BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT :=
-
 # GSI && GKI
-BOARD_USES_GENERIC_KERNEL_IMAGE := true
-BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
-BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
+#BOARD_USES_GENERIC_KERNEL_IMAGE := true
+#BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
+#BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 
 # Use LZ4 Ramdisk compression instead of GZIP
 BOARD_RAMDISK_USE_LZ4 := true
@@ -181,7 +177,6 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 # VINTF
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/recovery/root/vendor/etc/vintf/manifest.xml
-# TARGET_USES_64_BIT_BINDER := true
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
@@ -195,11 +190,6 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_LIBRESETPROP :=true
-
-# PBRP specific build flags
-PB_TORCH_PATH := "/sys/class/leds/led:torch_0"
-PB_DISABLE_DEFAULT_TREBLE_COMP := true
-PB_DISABLE_DEFAULT_DM_VERITY := true
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
@@ -233,3 +223,5 @@ PLATFORM_VERSION := 12.1
 TW_HAS_EDL_MODE := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS :=true
 TARGET_SUPPORTS_64_BIT_APPS :=true
+
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko adsp_sleepmon.ko goodix_ts.ko goodix_fp.ko focaltech_tp.ko rproc_qcom_common.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko st_fts.ko haptic.ko"

@@ -36,7 +36,7 @@ TW_EXTRA_LANGUAGES      := true
 TW_EXCLUDE_APEX         := true
 TW_INCLUDE_FASTBOOTD    := true
 
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko adsp_sleepmon.ko goodix_ts.ko goodix_fp.ko focaltech_tp.ko rproc_qcom_common.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko adsp"
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko adsp_sleepmon.ko goodix_ts.ko goodix_fp.ko focaltech_tp.ko rproc_qcom_common.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko st_fts.ko"
 
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
