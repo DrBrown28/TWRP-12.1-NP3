@@ -46,6 +46,21 @@ BOARD_KERNEL_IMAGE_NAME := Image
 #TARGET_KERNEL_CONFIG := vendor/sun_perf.config
 #TARGET_KERNEL_SOURCE := kernel/nothing/Metroid
 
+# Módulos del Kernel para el Ramdisk (Obligatorio para que modprobe funcione)
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
+    $(DEVICE_PATH)/prebuilt/modules/adsp_loader_dlkm.ko \
+    $(DEVICE_PATH)/prebuilt/modules/adsp_sleepmon.ko \
+    $(DEVICE_PATH)/prebuilt/modules/goodix_ts.ko \
+    $(DEVICE_PATH)/prebuilt/modules/goodix_fp.ko \
+    $(DEVICE_PATH)/prebuilt/modules/focaltech_tp.ko \
+    $(DEVICE_PATH)/prebuilt/modules/rproc_qcom_common.ko \
+    $(DEVICE_PATH)/prebuilt/modules/q6_dlkm.ko \
+    $(DEVICE_PATH)/prebuilt/modules/qcom_q6v5.ko \
+    $(DEVICE_PATH)/prebuilt/modules/qcom_q6v5_pas.ko \
+    $(DEVICE_PATH)/prebuilt/modules/qcom_sysmon.ko \
+    $(DEVICE_PATH)/prebuilt/modules/st_fts.ko \
+    $(DEVICE_PATH)/prebuilt/modules/haptic.ko
+
 # Kernel - prebuilt
 TARGET_KERNEL_ARCH := arm64
 TARGET_FORCE_PREBUILT_KERNEL := true
