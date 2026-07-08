@@ -15,6 +15,9 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Inherit from Metroid device
 $(call inherit-product, device/nothing/Metroid/device.mk)
 
+# Include TWRP props
+#$(call inherit-product, $(DEVICE_PATH)/twrp.mk)
+
 PRODUCT_DEVICE := Metroid
 PRODUCT_NAME := twrp_Metroid
 PRODUCT_BRAND := Nothing
