@@ -94,6 +94,8 @@ endif
 # Partitions
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
+TARGET_COPY_OUT_VENDOR := vendor
+
 TARGET_COPY_OUT_ODM := odm
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USES_VENDOR_DLKMIMAGE := true
@@ -233,4 +235,7 @@ TW_HAS_EDL_MODE := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS :=true
 TARGET_SUPPORTS_64_BIT_APPS :=true
 
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko adsp_sleepmon.ko goodix_ts.ko goodix_fp.ko focaltech_tp.ko rproc_qcom_common.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko st_fts.ko haptic.ko"
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko adsp_sleepmon.ko focaltech_tp.ko rproc_qcom_common.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko haptic.ko"
+
+PRODUCT_COPY_FILES += \
+$(DEVICE_PATH)/prebuilt/firmware/focaltech_ts_fw_boe.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/focaltech_ts_fw_boe.bin
