@@ -15,7 +15,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 
 DEVICE_PATH := device/nothing/Metroid
 
-# Inherit from Asteroids device
+# Inherit from Metroid device
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 # Include TWRP props
@@ -33,6 +33,6 @@ PRODUCT_MANUFACTURER := nothing
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="Metroid-user 15 AQ3A.250226.002 2507112047 dev-keys"
+    PRIVATE_BUILD_DESC="Metroid-user 16 BQ2A.250721.001-BP2A.250605.031.A3 2606241457 release-keys"
 
-BUILD_FINGERPRINT := Nothing/Metroid/Metroid:15/AQ3A.250226.002/2507112047:user/release-keys
+BUILD_FINGERPRINT := Nothing/Metroid/Metroid:16/BQ2A.250721.001-BP2A.250605.031.A3/2606241457:user/release-keys

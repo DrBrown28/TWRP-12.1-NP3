@@ -61,9 +61,9 @@ PRODUCT_PACKAGES += \
     f2fs_io \
     check_f2fs
 
-# fastbootd
+# Fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.1-impl-mock \
+    android.hardware.fastboot-service.qti \
     fastbootd
 
 # qcom decryption
@@ -72,8 +72,8 @@ PRODUCT_PACKAGES += \
     qcom_decrypt_fbe
 
 # Vibrator
-PRODUCT_COPY_FILES += \
-    vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
+PRODUCT_PACKAGES += \
+    vibrator.service
 
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *

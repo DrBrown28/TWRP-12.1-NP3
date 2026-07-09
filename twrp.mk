@@ -23,7 +23,9 @@ TW_THEME := portrait_hdpi
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 
-TW_MAX_BRIGHTNESS := 2048
+TW_BRIGHTNESS_PATH := "/sys/devices/platform/panel_drv_0/backlight/panel/brightness"
+TW_MAX_BRIGHTNESS := 306
+TW_DEFAULT_BRIGHTNESS := 150
 
 TW_DEFAULT_LANGUAGE     := es
 TW_USE_TOOLBOX          := true
@@ -36,12 +38,11 @@ TW_EXTRA_LANGUAGES      := true
 TW_EXCLUDE_APEX         := true
 TW_INCLUDE_FASTBOOTD    := true
 
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko adsp_sleepmon.ko goodix_ts.ko goodix_fp.ko focaltech_tp.ko rproc_qcom_common.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko st_fts.ko"
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko adsp_sleepmon.ko goodix_ts.ko goodix_fp.ko haptic.ko focaltech_tp.ko rproc_qcom_common.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko st_fts.ko"
 
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
-TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
 
 # USB

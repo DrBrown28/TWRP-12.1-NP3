@@ -18,7 +18,7 @@
 # 	Please maintain this if you use this script or any part of it
 #
 
-OF_SCREEN_H := 2400
+OF_SCREEN_H := 2800
 OF_STATUS_H := 130
 OF_STATUS_INDENT_LEFT := 48
 OF_STATUS_INDENT_RIGHT := 48
@@ -58,7 +58,7 @@ OF_ENABLE_ALL_PARTITION_TOOLS := 1
 
 # TEST
 
-OF_SKIP_FBE_DECRYPTION := 1
+OF_SKIP_FBE_DECRYPTION := 0
 
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
