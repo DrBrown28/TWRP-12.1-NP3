@@ -93,7 +93,8 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
 TARGET_KERNEL_ARCH := arm64
 TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_NO_KERNEL_OVERRIDE := true
-BOARD_PREBUILT_DTBOIMAGE := device/nothing/Metroid/prebuilt/dtbo
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
+#BOARD_PREBUILT_DTBOIMAGE := device/nothing/Metroid/prebuilt/dtbo
 ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 endif
