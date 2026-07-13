@@ -74,6 +74,13 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(DEVICE_PATH)/prebuilt/modules/goodix_ts.ko \
     $(DEVICE_PATH)/prebuilt/modules/goodix_fp.ko \
     $(DEVICE_PATH)/prebuilt/modules/focaltech_tp.ko \
+    $(DEVICE_PATH)/prebuilt/modules/msm_drm.ko \
+    $(DEVICE_PATH)/prebuilt/modules/leds-qpnp-vibrator-ldo.ko \
+    $(DEVICE_PATH)/prebuilt/modules/qti_battery_charger.ko \
+    $(DEVICE_PATH)/prebuilt/modules/drm_display_helper.ko \
+    $(DEVICE_PATH)/prebuilt/modules/msm_ext_display.ko \
+    $(DEVICE_PATH)/prebuilt/modules/nt_display_notifier.ko \
+    $(DEVICE_PATH)/prebuilt/modules/panel_event_notifier.ko \
     $(DEVICE_PATH)/prebuilt/modules/rproc_qcom_common.ko \
     $(DEVICE_PATH)/prebuilt/modules/q6_dlkm.ko \
     $(DEVICE_PATH)/prebuilt/modules/qcom_q6v5.ko \
@@ -235,7 +242,7 @@ TW_HAS_EDL_MODE := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS :=true
 TARGET_SUPPORTS_64_BIT_APPS :=true
 
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko adsp_sleepmon.ko focaltech_tp.ko rproc_qcom_common.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko haptic.ko"
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko adsp_sleepmon.ko focaltech_tp.ko msm_drm.ko leds-qpnp-vibrator-ldo.ko rproc_qcom_common.ko qti_battery_charger.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko haptic.ko drm_display_helper.ko msm_ext_display.ko nt_display_notifier.ko panel_event_notifier.ko st_fts.ko"
 
 PRODUCT_COPY_FILES += \
 $(DEVICE_PATH)/prebuilt/firmware/focaltech_ts_fw_boe.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/focaltech_ts_fw_boe.bin
