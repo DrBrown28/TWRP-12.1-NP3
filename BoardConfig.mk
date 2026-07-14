@@ -228,11 +228,11 @@ TW_INCLUDE_NTFS_3G := true
 TW_USE_TOOLBOX := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_BRIGHTNESS_PATH := "/sys/devices/platform/panel_drv_0/backlight/panel/brightness"
-TW_MAX_BRIGHTNESS := 306
+TW_MAX_BRIGHTNESS := 1500
 ifeq ($(TW_DEFAULT_LANGUAGE),)
 TW_DEFAULT_LANGUAGE := EN
 endif
-TW_DEFAULT_BRIGHTNESS := 150
+TW_DEFAULT_BRIGHTNESS := 1500
 TW_Y_OFFSET := 88
 TW_H_OFFSET := -88
 TWRP_INCLUDE_LOGCAT := true
@@ -243,7 +243,7 @@ TW_HAS_EDL_MODE := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS :=true
 TARGET_SUPPORTS_64_BIT_APPS :=true
 
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko adsp_sleepmon.ko focaltech_tp.ko msm_drm.ko leds-qpnp-vibrator-ldo.ko rproc_qcom_common.ko qti_battery_charger.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko haptic.ko drm_display_helper.ko msm_ext_display.ko nt_display_notifier.ko panel_event_notifier.ko st_fts.ko"
+TW_LOAD_VENDOR_MODULES := "rproc_qcom_common.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko adsp_loader_dlkm.ko adsp_sleepmon.ko q6_dlkm.ko leds-qpnp-vibrator-ldo.ko qti_battery_charger.ko drm_display_helper.ko msm_drm.ko msm_ext_display.ko panel_event_notifier.ko nt_display_notifier.ko focaltech_tp.ko goodix_ts.ko goodix_fp.ko st_fts.ko haptic.ko"
 
 PRODUCT_COPY_FILES += \
 $(DEVICE_PATH)/prebuilt/firmware/focaltech_ts_fw_boe.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/focaltech_ts_fw_boe.bin
