@@ -132,10 +132,11 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
 
 # GSI && GKI
-BOARD_USES_GENERIC_KERNEL_IMAGE := true
-BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
+#BOARD_USES_GENERIC_KERNEL_IMAGE := true
+#BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 
 # Use LZ4 Ramdisk compression instead of GZIP
@@ -169,7 +170,7 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdebuggerd_client.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
-TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
+#TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
@@ -227,7 +228,8 @@ TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
 TW_USE_TOOLBOX := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_BRIGHTNESS_PATH := "/sys/devices/platform/panel_drv_0/backlight/panel/brightness"
+TW_BRIGHTNESS_PATH         := "/sys/class/backlight/panel0-backlight/brightness"
+TW_CUSTOM_CPU_TEMP_PATH    := "/sys/class/thermal/thermal_zone6/temp"
 TW_MAX_BRIGHTNESS := 1500
 ifeq ($(TW_DEFAULT_LANGUAGE),)
 TW_DEFAULT_LANGUAGE := EN
@@ -242,8 +244,11 @@ PLATFORM_VERSION := 12.1
 TW_HAS_EDL_MODE := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS :=true
 TARGET_SUPPORTS_64_BIT_APPS :=true
+TW_HAS_MTP                 := true
+TW_INTERNAL_STORAGE_PATH   := "/data/media/0"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH   := "/usb_otg"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "usb_otg"
 
-TW_LOAD_VENDOR_MODULES := "rproc_qcom_common.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko adsp_loader_dlkm.ko adsp_sleepmon.ko q6_dlkm.ko leds-qpnp-vibrator-ldo.ko qti_battery_charger.ko drm_display_helper.ko msm_drm.ko msm_ext_display.ko panel_event_notifier.ko nt_display_notifier.ko focaltech_tp.ko goodix_ts.ko goodix_fp.ko st_fts.ko haptic.ko"
-
-PRODUCT_COPY_FILES += \
-$(DEVICE_PATH)/prebuilt/firmware/focaltech_ts_fw_boe.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/focaltech_ts_fw_boe.bin
+TW_LOAD_VENDOR_MODULES := "$(shell tr '\n' ' ' < $(DEVICE_PATH)/recovery/root/vendor/lib/modules/modules.load.recovery)"
+TW_MODULE_BLACKLIST := aw9380x|aw_press 

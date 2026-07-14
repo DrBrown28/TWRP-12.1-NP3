@@ -22,7 +22,7 @@ $(call inherit-product, $(DEVICE_PATH)/device.mk)
 #$(call inherit-product, $(DEVICE_PATH)/twrp.mk)
 
 # Include Fox props
-#$(call inherit-product, $(DEVICE_PATH)/fox.mk)
+$(call inherit-product, $(DEVICE_PATH)/fox.mk)
 
 PRODUCT_DEVICE := Metroid
 PRODUCT_NAME := fox_Metroid
