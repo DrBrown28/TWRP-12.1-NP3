@@ -18,15 +18,17 @@ on fs
     mkdir /firmware
     mount vfat /dev/block/by-name/modem${ro.boot.slot_suffix} /firmware ro
 
+    # CAMBIO CRÍTICO: Se arranca el ADSP aquí para habilitar los buses de sensores/táctil 
+    # ANTES de que comience la carga masiva de módulos (.ko) de TWRP.
+    wait /sys/kernel/boot_adsp/boot
+    write /sys/kernel/boot_adsp/boot 1
+
     # Mount persist - Needed for haptics
     # We want to load this BEFORE "twrp.modules.loaded=true"
     mkdir /mnt/vendor/persist/
     mount ext4 /dev/block/bootdevice/by-name/persist /mnt/vendor/persist/ ro
 
 on property:twrp.modules.loaded=true
-    # Load ADSP firmware for PMIC
-    wait /sys/kernel/boot_adsp/boot
-    write /sys/kernel/boot_adsp/boot 1
     wait /sys/class/power_supply/battery
 
     start health-hal-2-1
@@ -36,8 +38,3 @@ on property:twrp.modules.loaded=true
 
 on boot
     setprop sys.usb.config adb
-
-# Symlink Flashlight
-#on property:twrp.modules.loaded=true
-#    symlink /sys/class/leds/led:torch/brightness /system/etc/flashlight/brightness
-#
