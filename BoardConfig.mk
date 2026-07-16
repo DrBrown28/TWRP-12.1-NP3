@@ -69,10 +69,11 @@ BOARD_MKBOOTIMG_ARGS          += --pagesize $(BOARD_KERNEL_PAGESIZE)
 
 # Módulos del Kernel para el Ramdisk (Obligatorio para que modprobe funcione)
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
-    $(DEVICE_PATH)/prebuilt/modules/adsp_loader_dlkm.ko \
     $(DEVICE_PATH)/prebuilt/modules/adsp_sleepmon.ko \
-    $(DEVICE_PATH)/prebuilt/modules/goodix_ts.ko \
     $(DEVICE_PATH)/prebuilt/modules/goodix_fp.ko \
+    $(DEVICE_PATH)/prebuilt/modules/panel_event_notifier.ko \
+    $(DEVICE_PATH)/prebuilt/modules/touchpanel_event_notify.ko \
+    $(DEVICE_PATH)/prebuilt/modules/qts.ko \
     $(DEVICE_PATH)/prebuilt/modules/focaltech_tp.ko \
     $(DEVICE_PATH)/prebuilt/modules/msm_drm.ko \
     $(DEVICE_PATH)/prebuilt/modules/leds-qpnp-vibrator-ldo.ko \
@@ -80,14 +81,10 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(DEVICE_PATH)/prebuilt/modules/drm_display_helper.ko \
     $(DEVICE_PATH)/prebuilt/modules/msm_ext_display.ko \
     $(DEVICE_PATH)/prebuilt/modules/nt_display_notifier.ko \
-    $(DEVICE_PATH)/prebuilt/modules/panel_event_notifier.ko \
     $(DEVICE_PATH)/prebuilt/modules/rproc_qcom_common.ko \
-    $(DEVICE_PATH)/prebuilt/modules/q6_dlkm.ko \
     $(DEVICE_PATH)/prebuilt/modules/qcom_q6v5.ko \
     $(DEVICE_PATH)/prebuilt/modules/qcom_q6v5_pas.ko \
-    $(DEVICE_PATH)/prebuilt/modules/qcom_sysmon.ko \
-    $(DEVICE_PATH)/prebuilt/modules/st_fts.ko \
-    $(DEVICE_PATH)/prebuilt/modules/haptic.ko
+    $(DEVICE_PATH)/prebuilt/modules/qcom_sysmon.ko
 
 # Kernel - prebuilt
 TARGET_KERNEL_ARCH := arm64
